@@ -10,7 +10,9 @@ import com.ghgande.j2mod.modbus.ModbusException;
 public class Main {
 
     public static void main(String[] args) {
+
         // Настройки последовательного порта
+
         SerialParameters params = new SerialParameters();
         params.setPortName("COM3"); // Укажите ваш COM-порт
         params.setBaudRate(115200); // Установите скорость соединения
@@ -25,11 +27,6 @@ public class Main {
         modbusMaster.setRetries(3); // Количество попыток переподключения
 
         long scanRate = 1000;
-
-//        double scanRate = 10.;
-//
-//        double period = 1 / scanRate;
-//        long requestDuration = (long) (period * 1000);
 
         boolean connected = false;
         try {
@@ -81,7 +78,6 @@ public class Main {
         }
     }
     public static int numbersConnector (int x, int y) {
-        //return Integer.parseInt(x + String.valueOf(y));
         return x | (y << 16);
     }
 }
